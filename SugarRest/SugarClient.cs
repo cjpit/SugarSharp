@@ -60,7 +60,7 @@ namespace SugarRest
             Username = username;
             Password = password;
 
-            client.BaseUrl = BaseUrl;
+            client.BaseUrl = new Uri(BaseUrl);
             Login();//avoid breaking change ... @todo - client creation will be moved into factory method
         }
 
@@ -72,7 +72,7 @@ namespace SugarRest
         public SugarClient(string url, string token) : this()
         {
             BaseUrl = url;
-            client.BaseUrl = BaseUrl;
+            client.BaseUrl = new Uri(BaseUrl);
             Token = token;
         }
 
